@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="description" content="Challenge by Frontend Mentor. Coded by Mateus Belício.">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+<body>
+
+  <header class="header">
+    <img src="images/logo.svg" alt="Logo" class="header__logo">
+    
+    <button class="btn btn--menu" data-active="false" aria-controls="nav">
+      <span class="text-hidden">Menu</span>
+    </button>
+
+    <nav id="nav" class="navigation">
+
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <details class="dropbox dropbox--align-right">
+            <summary class="dropbox__title">Dropbox</summary>
+            <ul class="dropbox__list">
+              <li class="dropbox__item"><a href="#" class="navigation__link navigation__link--icon">Todo List</a></li>
+              <li class="dropbox__item"><a href="#" class="navigation__link navigation__link--icon">Calendar</a></li>
+              <li class="dropbox__item"><a href="#" class="navigation__link navigation__link--icon">Reminders</a></li>
+              <li class="dropbox__item"><a href="#" class="navigation__link navigation__link--icon">Planning</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="navigation__item">
+          <details class="dropbox">
+            <summary class="dropbox__title">Dropbox</summary>
+            <ul class="dropbox__list">
+              <li class="dropbox__item"><a href="#" class="navigation__link">Teste</a></li>
+              <li class="dropbox__item"><a href="#" class="navigation__link">Teste</a></li>
+              <li class="dropbox__item"><a href="#" class="navigation__link">Teste</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="navigation__item"><a href="#" class="navigation__link">Link</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">Link</a></li>
+      </ul>
+
+      <button class="btn btn--theme"><span class="text-hidden">Change the theme</span></button>
+      <button class="btn btn--no-border">Login</button>
+      <button class="btn">Register</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1 class="hero__title">Make remote work</h1>
+      <p class="hero__text">
+        Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.
+      </p>
+      <a href="#" class="btn btn--fill">Learn more</a>
+      <div class="hero__clients">
+        <img src="images/client-databiz.svg" alt="" class="hero__clients-logo">
+        <img src="images/client-audiophile.svg" alt="" class="hero__clients-logo">
+        <img src="images/client-meet.svg" alt="" class="hero__clients-logo">
+        <img src="images/client-maker.svg" alt="" class="hero__clients-logo">
+      </div>
+      <picture class="hero__image">
+        <source media="(min-width: 50em)" srcset="images/image-hero-desktop.png">
+        <img src="images/image-hero-mobile.png" alt="">
+      </picture>
+    </div>
+  </main>
+
+  
+
+  
+
+  
+
+</body>
+</html>
