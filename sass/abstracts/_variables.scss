@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+/// Main font family
+$ff-primary: 'Epilogue', sans-serif;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 69.375rem !default;
+
+$colors: (
+  neutral: (
+    300: hsl(0, 0%, 98%),
+    400: hsl(0, 0%, 41%),
+    500: hsl(0, 0%, 8%),
+  ),
+  accent: (
+    400: hsl(52, 72%, 52%),
+  ),
+);
+
+$shadow-smooth: 0 0 1rem rgba(0, 0, 0, 0.15);
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 37.6em,
+  'medium': 50em,
+  'large': 62.5em,
+) !default;
+
+/// Z-indexes map, gathering all Z layers of the application
+/// @access private
+/// @type Map
+/// @prop {String} key - Layer’s name
+/// @prop {Number} value - Z value mapped to the key
+$z-indexes: (
+  'above': 600,
+  'modal': 500,
+  'dropdown': 400,
+  'default': 1,
+  'below': -1,
+);
