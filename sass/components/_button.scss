@@ -3,3 +3,12 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/' as *;
+
+.btn {
+  display: inline-block;
+  line-height: 1;
+  font-size: to-rem(14);
+  background: none;
+  border: none;
+  color: clr('neutral');
+}

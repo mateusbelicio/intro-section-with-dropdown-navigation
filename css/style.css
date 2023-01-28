@@ -434,4 +434,96 @@ input::placeholder {
   margin-bottom: 9.375rem;
 }
 
+.btn {
+  display: inline-block;
+  line-height: 1;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  color: var(--clr-neutral-400);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+  font-size: 0.875rem;
+  color: var(--clr-neutral-400);
+}
+.navigation__list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  list-style: none;
+}
+.navigation__link {
+  color: inherit;
+  text-decoration: none;
+}
+.navigation__link:hover {
+  color: var(--clr-neutral-500);
+}
+.navigation__link--icon {
+  display: grid;
+  grid-template-columns: 1rem auto;
+  align-items: center;
+  gap: 0.875rem;
+}
+.navigation__link--icon::before {
+  display: inline-block;
+  justify-self: center;
+}
+.navigation__link--icon[data-icon=todo]::before {
+  content: url(../images/icon-todo.svg);
+}
+.navigation__link--icon[data-icon=calendar]::before {
+  content: url(../images/icon-calendar.svg);
+}
+.navigation__link--icon[data-icon=reminders]::before {
+  content: url(../images/icon-reminders.svg);
+}
+.navigation__link--icon[data-icon=planning]::before {
+  content: url(../images/icon-planning.svg);
+}
+
+.dropbox {
+  position: relative;
+}
+.dropbox[open] .dropbox__title::after {
+  content: url(../images/icon-arrow-up.svg);
+}
+.dropbox__title {
+  cursor: pointer;
+  position: relative;
+  padding-inline-end: 1.125rem;
+}
+.dropbox__title:hover {
+  color: var(--clr-neutral-500);
+}
+.dropbox__title::marker {
+  content: "";
+  display: none;
+}
+.dropbox__title::after {
+  content: url(../images/icon-arrow-down.svg);
+  font-size: 0.375rem;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  margin-inline-start: 0.5rem;
+}
+.dropbox__list {
+  position: absolute;
+  top: calc(100% + 1.5rem);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid red;
+}
+.dropbox__list--align-right {
+  right: 0;
+}
+
 /*# sourceMappingURL=style.css.map */

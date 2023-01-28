@@ -5,4 +5,49 @@
 @use '../abstracts/' as *;
 
 .dropbox {
+  position: relative;
+
+  &[open] &__title::after {
+    content: url(../images/icon-arrow-up.svg);
+  }
+
+  &__title {
+    cursor: pointer;
+    position: relative;
+    padding-inline-end: to-rem(18);
+
+    &:hover {
+      color: clr('neutral', 500);
+    }
+
+    &::marker {
+      content: '';
+      display: none;
+    }
+
+    &::after {
+      content: url(../images/icon-arrow-down.svg);
+      font-size: to-rem(6);
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+
+      margin-inline-start: to-rem(8);
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: calc(100% + to-rem(24));
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(16);
+    border: 1px solid red;
+
+    &--align-right {
+      right: 0;
+    }
+  }
 }

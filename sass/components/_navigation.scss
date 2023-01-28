@@ -5,4 +5,52 @@
 @use '../abstracts/' as *;
 
 .navigation {
+  display: flex;
+  align-items: center;
+  gap: to-rem(16);
+
+  user-select: none;
+  font-size: to-rem(14);
+  color: clr('neutral');
+
+  &__list {
+    display: flex;
+    gap: to-rem(16);
+    align-items: center;
+    list-style: none;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: clr('neutral', 500);
+    }
+
+    &--icon {
+      display: grid;
+      grid-template-columns: to-rem(16) auto;
+      align-items: center;
+      gap: to-rem(14);
+
+      &::before {
+        display: inline-block;
+        justify-self: center;
+      }
+
+      &[data-icon='todo']::before {
+        content: url(../images/icon-todo.svg);
+      }
+      &[data-icon='calendar']::before {
+        content: url(../images/icon-calendar.svg);
+      }
+      &[data-icon='reminders']::before {
+        content: url(../images/icon-reminders.svg);
+      }
+      &[data-icon='planning']::before {
+        content: url(../images/icon-planning.svg);
+      }
+    }
+  }
 }
