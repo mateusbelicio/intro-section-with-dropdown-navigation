@@ -4,20 +4,46 @@
 
 @use '../abstracts/' as *;
 
+.btn--menu[data-active='true'] + .navigation {
+  transform: translateX(0);
+}
+
 .navigation {
   display: flex;
-  align-items: center;
-  gap: to-rem(16);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: to-rem(8);
 
   user-select: none;
-  font-size: to-rem(14);
+  font-size: to-rem(16);
   color: clr('neutral');
+  background-color: clr('neutral', 300);
+
+  position: fixed;
+  inset: 0;
+  padding: to-rem(82) to-rem(16) to-rem(82) to-rem(24);
+
+  transform-origin: right;
+  transform: translateX(100%);
+  transition: inset 0.4s cubic-bezier(0, 1.71, 0.23, 0.54), transform 0.4s ease-in-out;
+
+  @include breakpoint(375) {
+    inset: 0 0 0 36vw;
+  }
 
   &__list {
     display: flex;
-    gap: to-rem(16);
-    align-items: center;
+    flex-direction: column;
+    gap: to-rem(24);
+    align-items: flex-start;
     list-style: none;
+    margin-bottom: to-rem(24);
+
+    *:focus-visible {
+      outline: none;
+      text-decoration: underline;
+      text-underline-offset: 8px;
+    }
   }
 
   &__link {
@@ -42,15 +68,22 @@
       &[data-icon='todo']::before {
         content: url(../images/icon-todo.svg);
       }
+
       &[data-icon='calendar']::before {
         content: url(../images/icon-calendar.svg);
       }
+
       &[data-icon='reminders']::before {
         content: url(../images/icon-reminders.svg);
       }
+
       &[data-icon='planning']::before {
         content: url(../images/icon-planning.svg);
       }
     }
+  }
+
+  & button {
+    align-self: stretch;
   }
 }

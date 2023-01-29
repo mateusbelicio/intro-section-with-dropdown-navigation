@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+.hero {
+  row-gap: to-rem(24);
+  justify-items: center;
+
+  & > * {
+    grid-column: center;
+  }
+
+  &__title {
+    font-size: minmax-font(35, 80);
+    font-weight: 700;
+    letter-spacing: -1px;
+    padding-inline: to-rem(16);
+    line-height: 1;
+    color: clr('neutral', 500);
+    margin-top: to-rem(24);
+  }
+
+  &__text {
+    padding-inline: to-rem(16);
+  }
+
+  &__clients {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
+    gap: to-rem(30);
+    padding-inline: to-rem(16);
+    margin-top: to-rem(24);
+  }
+
+  &__image {
+    grid-row: 1;
+
+    & > * {
+      width: 100%;
+    }
+  }
+}

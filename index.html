@@ -7,12 +7,14 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="main.js" defer></script>
   
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 </head>
 <body>
 
-  <header class="header">
+  <header class="header container">
     <img src="images/logo.svg" alt="Logo" class="header__logo">
     
     <button class="btn btn--menu" data-active="false" aria-controls="nav">
@@ -60,12 +62,12 @@
 
       <button class="btn btn--theme"><span class="text-hidden">Change the theme</span></button>
       <button class="btn btn--no-border">Login</button>
-      <button class="btn">Register</button>
+      <button class="btn btn--default">Register</button>
     </nav>
   </header>
 
   <main>
-    <div class="hero">
+    <div class="hero grid-container">
       <h1 class="hero__title">Make remote work</h1>
       <p class="hero__text">
         Get your team in sync, no matter your location. Streamline processes,

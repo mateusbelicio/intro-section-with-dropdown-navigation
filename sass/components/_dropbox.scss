@@ -5,6 +5,12 @@
 @use '../abstracts/' as *;
 
 .dropbox {
+  *:focus-visible {
+    outline: none;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+
   position: relative;
 
   &[open] &__title::after {
@@ -37,17 +43,20 @@
   }
 
   &__list {
-    position: absolute;
-    top: calc(100% + to-rem(24));
+    @include breakpoint('small') {
+      position: absolute;
+      top: calc(100% + to-rem(24));
+
+      &--align-right {
+        right: 0;
+      }
+    }
+
     list-style: none;
+    padding: to-rem(24) to-rem(24) to-rem(4);
 
     display: flex;
     flex-direction: column;
-    gap: to-rem(16);
-    border: 1px solid red;
-
-    &--align-right {
-      right: 0;
-    }
+    gap: to-rem(24);
   }
 }

@@ -11,4 +11,108 @@
   background: none;
   border: none;
   color: clr('neutral');
+  text-decoration: none;
+  cursor: pointer;
+
+  &--menu {
+    position: fixed;
+    right: to-rem(16);
+    z-index: z('above');
+
+    aspect-ratio: 1 / 0.5;
+    width: to-rem(32);
+
+    & > span {
+      top: 50%;
+      transition: opacity 0.2s 0.3s;
+      @extend %bar;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      left: 0;
+      @extend %bar;
+    }
+
+    &::before {
+      top: 0;
+      transition: top 0.2s 0.3s, transform 0.3s;
+    }
+
+    &::after {
+      top: 100%;
+      transition: top 0.2s 0.3s, transform 0.3s;
+    }
+  }
+
+  &--menu[data-active='true'] {
+    & > span {
+      opacity: 0;
+      transition: opacity 0.2s 0.1s;
+    }
+
+    &::after {
+      top: 50%;
+      transform: translateY(-50%) rotate(135deg);
+      transition: top 0.2s, transform 0.3s 0.2s;
+    }
+
+    &::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(225deg);
+      transition: top 0.2s, transform 0.3s 0.2s;
+    }
+  }
+
+  &--no-border {
+    @extend %padding;
+    transition: color 0.2s;
+
+    &:hover {
+      color: clr('neutral', 500);
+    }
+  }
+
+  &--default {
+    @extend %padding;
+    color: clr('neutral');
+    border: 1px solid currentColor;
+    transition: color 0.2s;
+
+    &:hover {
+      color: clr('neutral', 500);
+    }
+  }
+
+  &--fill {
+    @extend %padding;
+    font-size: to-rem(16);
+    color: clr('neutral', 300);
+    border: 1px solid clr('neutral');
+    background-color: clr('neutral', 500);
+    transition: color 0.2s, background-color 0.2s;
+
+    &:hover {
+      background-color: clr('neutral', 300);
+      color: clr('neutral', 500);
+    }
+  }
+}
+
+%bar {
+  display: block;
+  background-color: clr('neutral', 500);
+  height: to-rem(2);
+  width: 100%;
+
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+%padding {
+  padding: to-rem(12) to-rem(24);
+  text-align: center;
+  display: block;
+  border-radius: to-rem(14);
 }

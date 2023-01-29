@@ -9,6 +9,10 @@
   align-items: center;
   justify-content: space-between;
 
-  padding-block: to-rem(32) to-rem(48);
-  margin-bottom: to-rem(150);
+  padding-block: to-rem(24);
+  position: relative;
+
+  & > * {
+    flex-shrink: 0;
+  }
 }

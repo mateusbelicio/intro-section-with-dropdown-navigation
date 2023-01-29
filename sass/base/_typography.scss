@@ -5,17 +5,20 @@
 @use '../abstracts/' as *;
 
 body {
-  font-size: minmax-font(12, 20);
+  font-size: minmax-font(16, 18);
+  font-weight: 500;
   font-family: $ff-primary;
+  line-height: 1.6;
+  text-align: center;
   color: clr('neutral', 400);
 }
 
 h1,
-.h1 {
-  font-size: minmax-font(24, 52);
-  font-weight: 300;
-  color: clr('neutral', 500);
-  letter-spacing: calc(-4 * 0.01em);
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
 }
 
 input,
