@@ -26,6 +26,14 @@
   margin-inline: auto;
 }
 
+.container--big {
+  $padding-inline: to-rem(16);
+  $max-width: 85rem;
+
+  width: min($max-width, calc(100% - 2 * $padding-inline));
+  margin-inline: auto;
+}
+
 .grid-container {
   $num-grid: 8;
 

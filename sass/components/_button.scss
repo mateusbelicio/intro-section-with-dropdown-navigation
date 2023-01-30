@@ -14,9 +14,13 @@
   text-decoration: none;
   cursor: pointer;
 
+  &:focus-visible {
+    outline: 1px dashed clr('neutral', 500);
+    outline-offset: 3px;
+  }
+
   &--menu {
-    position: fixed;
-    right: to-rem(16);
+    position: relative;
     z-index: z('above');
 
     aspect-ratio: 1 / 0.5;
@@ -47,6 +51,9 @@
   }
 
   &--menu[data-active='true'] {
+    position: fixed;
+    right: to-rem(16);
+
     & > span {
       opacity: 0;
       transition: opacity 0.2s 0.1s;
@@ -84,20 +91,6 @@
       color: clr('neutral', 500);
     }
   }
-
-  &--fill {
-    @extend %padding;
-    font-size: to-rem(16);
-    color: clr('neutral', 300);
-    border: 1px solid clr('neutral');
-    background-color: clr('neutral', 500);
-    transition: color 0.2s, background-color 0.2s;
-
-    &:hover {
-      background-color: clr('neutral', 300);
-      color: clr('neutral', 500);
-    }
-  }
 }
 
 %bar {
@@ -115,4 +108,22 @@
   text-align: center;
   display: block;
   border-radius: to-rem(14);
+}
+
+.btn--fill {
+  @extend %padding;
+  font-size: to-rem(16);
+  color: clr('neutral', 300);
+  border: 1px solid clr('neutral');
+  background-color: clr('neutral', 500);
+  transition: color 0.2s, background-color 0.2s;
+
+  @include breakpoint('medium') {
+    padding: to-rem(16) to-rem(32);
+  }
+
+  &:hover {
+    background-color: clr('neutral', 300);
+    color: clr('neutral', 500);
+  }
 }

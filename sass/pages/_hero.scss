@@ -5,11 +5,37 @@
 @use '../abstracts/' as *;
 
 .hero {
-  row-gap: to-rem(24);
+  --nav-height: 88px;
+
+  display: grid;
+  grid-template-columns: 1fr;
   justify-items: center;
+  row-gap: to-rem(24);
+
+  margin-inline: auto;
+  padding-bottom: to-rem(32);
+  max-width: $max-width;
+
+  @include breakpoint('medium') {
+    grid-template-columns: 1fr minmax(auto, to-rem(480));
+    grid-template-rows: 1fr repeat(4, auto) 1fr;
+    justify-items: start;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: to-rem(48);
+
+    min-height: calc(100vh - var(--nav-height));
+    text-align: left;
+    padding-inline: to-rem(16);
+  }
+
+  @include breakpoint(1145) {
+    padding-inline: 0;
+  }
 
   & > * {
-    grid-column: center;
+    grid-column: 1;
   }
 
   &__title {
@@ -20,10 +46,28 @@
     line-height: 1;
     color: clr('neutral', 500);
     margin-top: to-rem(24);
+
+    @include breakpoint('medium') {
+      padding: 0;
+      max-width: 11ch;
+      grid-row: 2;
+    }
   }
 
   &__text {
     padding-inline: to-rem(16);
+
+    @include breakpoint('medium') {
+      padding: 0;
+      max-width: 45ch;
+      grid-row: 3;
+    }
+  }
+
+  & .btn {
+    @include breakpoint('medium') {
+      grid-row: 4;
+    }
   }
 
   &__clients {
@@ -35,10 +79,27 @@
     gap: to-rem(30);
     padding-inline: to-rem(16);
     margin-top: to-rem(24);
+
+    @include breakpoint('medium') {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row: 5;
+    }
+
+    @include breakpoint('large') {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: to-rem(48);
+    }
   }
 
   &__image {
     grid-row: 1;
+    grid-column: 1 / -1;
+    width: 100%;
+
+    @include breakpoint('medium') {
+      grid-column: 2;
+      grid-row: 1 / -1;
+    }
 
     & > * {
       width: 100%;

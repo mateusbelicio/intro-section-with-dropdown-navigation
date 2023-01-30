@@ -6,6 +6,12 @@
 
 .btn--menu[data-active='true'] + .navigation {
   transform: translateX(0);
+  box-shadow: -0.5rem 0 1rem rgba(0, 0, 0, 0.15);
+
+  @include breakpoint('medium') {
+    box-shadow: none;
+    transition: none;
+  }
 }
 
 .navigation {
@@ -22,13 +28,25 @@
   position: fixed;
   inset: 0;
   padding: to-rem(82) to-rem(16) to-rem(82) to-rem(24);
+  z-index: z('modal');
 
   transform-origin: right;
   transform: translateX(100%);
-  transition: inset 0.4s cubic-bezier(0, 1.71, 0.23, 0.54), transform 0.4s ease-in-out;
+  transition: inset 0.4s cubic-bezier(0, 1.71, 0.23, 0.54), transform 0.4s ease-in-out,
+    box-shadow 0.3s ease-out 0.2s;
 
   @include breakpoint(375) {
     inset: 0 0 0 36vw;
+  }
+
+  @include breakpoint('medium') {
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    padding: 0;
+
+    position: static;
+    transform: none;
   }
 
   &__list {
@@ -44,6 +62,15 @@
       text-decoration: underline;
       text-underline-offset: 8px;
     }
+
+    @include breakpoint('medium') {
+      flex-direction: row;
+      align-items: center;
+      margin: 0;
+      margin-right: auto;
+      gap: to-rem(40);
+      font-size: to-rem(14);
+    }
   }
 
   &__link {
@@ -58,6 +85,7 @@
       display: grid;
       grid-template-columns: to-rem(16) auto;
       align-items: center;
+      justify-items: start;
       gap: to-rem(14);
 
       &::before {

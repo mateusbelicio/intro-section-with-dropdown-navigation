@@ -21,6 +21,7 @@
     cursor: pointer;
     position: relative;
     padding-inline-end: to-rem(18);
+    text-align: start;
 
     &:hover {
       color: clr('neutral', 500);
@@ -43,20 +44,32 @@
   }
 
   &__list {
-    @include breakpoint('small') {
-      position: absolute;
-      top: calc(100% + to-rem(24));
-
-      &--align-right {
-        right: 0;
-      }
-    }
-
     list-style: none;
-    padding: to-rem(24) to-rem(24) to-rem(4);
+    padding-block: to-rem(24) to-rem(4);
+    margin-left: to-rem(24);
 
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: to-rem(24);
+
+    @include breakpoint('medium') {
+      position: absolute;
+      top: calc(100% + to-rem(20));
+
+      gap: to-rem(16);
+      padding: to-rem(24);
+      margin-left: 0;
+      width: max-content;
+
+      background-color: clr('neutral', 300);
+      border-radius: to-rem(10);
+      box-shadow: $shadow-smooth;
+
+      &--align-right {
+        right: 0;
+        left: auto;
+      }
+    }
   }
 }
