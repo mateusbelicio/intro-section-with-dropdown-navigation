@@ -726,7 +726,6 @@ input::placeholder {
 }
 
 .hero {
-  --nav-height: 88px;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
@@ -744,7 +743,7 @@ input::placeholder {
     align-items: center;
     align-content: center;
     gap: 3rem;
-    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(100vh - 5.5rem);
     text-align: left;
     padding-inline: 1rem;
   }

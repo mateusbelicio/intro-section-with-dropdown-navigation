@@ -5,8 +5,6 @@
 @use '../abstracts/' as *;
 
 .hero {
-  --nav-height: 88px;
-
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
@@ -25,7 +23,7 @@
     align-content: center;
     gap: to-rem(48);
 
-    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(100vh - to-rem(88));
     text-align: left;
     padding-inline: to-rem(16);
   }
