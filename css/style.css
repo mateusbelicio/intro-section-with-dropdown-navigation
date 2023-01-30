@@ -463,6 +463,11 @@ input::placeholder {
   background-color: rgba(0, 0, 0, 0.15);
   z-index: 400;
 }
+@media only screen and (min-width: 50em) {
+  .overlay {
+    display: none;
+  }
+}
 
 .btn {
   display: inline-block;
